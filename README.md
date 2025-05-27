@@ -71,7 +71,7 @@
 
 </div>
 
-## 🏆 GitHub Trophies
+<!-- ## 🏆 GitHub Trophies
 
 <div align="center">
 
@@ -85,4 +85,4 @@
 
 [![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Fathoni1509&theme=tokyo-night)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
-</div>
+</div> -->
