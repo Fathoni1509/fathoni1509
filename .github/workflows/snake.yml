@@ -2,7 +2,7 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *" # setiap hari
+    - cron: "0 0 * * *" # setiap hari tengah malam UTC
   workflow_dispatch:
 
 jobs:
@@ -12,16 +12,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Generate snake
+      - name: Generate snake (dark theme, slow speed)
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            ./output/github-contribution-grid-snake.svg
+            ./output/github-contribution-grid-snake-dark.svg
+          theme: dark
+          color_snake: #39FF14  # warna ular (neon green)
+          color_dots: #0D1117, #161B22, #30363D, #484F58, #58A6FF
+          gif_duration: 10      # perlambat durasi animasi (default: 5)
 
-      - name: Push to GitHub
+      - name: Push snake file to repo
         uses: EndBug/add-and-commit@v9
         with:
           author_name: github-actions
           author_email: github-actions@github.com
-          message: "Generate contribution snake"
+          message: "Generate dark-themed contribution snake"
